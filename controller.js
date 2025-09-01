@@ -10,27 +10,49 @@ export const homeController = (req, res) => {
   res.send("Hello CEEJAY, This is a NODE BACKEND API");
 };
 
+const dataMap = {
+  users,
+  user: users,
+  quotes,
+  todos,
+  posts,
+  comments,
+  carts,
+  recipes
+};
+
 export const routesController = (req, res) => {
   const username = req.params.username;
-  if(username === 'users'|| username === 'user'){
-    res.send(users)
-  } else if (username === 'quotes'){
-    res.send(quotes)
-  }else if(username === 'todos'){
-    res.send(todos)
-  }else if(username === 'posts'){
-    res.send(posts)
-  }  else if (username === 'comments'){
-    res.send(comments)
-  } else if (username === 'carts'){
-    res.send(carts)
-  } else if (username === 'recipes'){
-    res.send(recipes)
+  const data = dataMap[username];
+
+  if (data) {
+    res.send(data);
   } else {
     res.send(`Hi ${username}, welcome to your route`);
   }
-  
 };
+
+
+// export const routesController = (req, res) => {
+//   const username = req.params.username;
+//   if(username === 'users'|| username === 'user'){
+//     res.send(users)
+//   } else if (username === 'quotes'){
+//     res.send(quotes)
+//   }else if(username === 'todos'){
+//     res.send(todos)
+//   }else if(username === 'posts'){
+//     res.send(posts)
+//   }  else if (username === 'comments'){
+//     res.send(comments)
+//   } else if (username === 'carts'){
+//     res.send(carts)
+//   } else if (username === 'recipes'){
+//     res.send(recipes)
+//   } else {
+//     res.send(`Hi ${username}, welcome to your route`);
+//   }  
+// };
 
 export const portController = () => {
   console.log(`App is running on port http://localhost:3000`);
