@@ -1,10 +1,10 @@
 import users from "./data/users.json" with { type: "json" };
 import quotes from "./data/quotes.json" with {type: "json"}
 import todos from "./data/todos.json" with {type:'json'}
-import posts from "./data/todos.json" with {type:'json'}
-import comments from "./data/todos.json" with {type:'json'}
-import carts from "./data/todos.json" with {type:'json'}
-import recipes from "./data/todos.json" with {type:'json'}
+import posts from "./data/posts.json" with {type:'json'}
+import comments from "./data/comments.json" with {type:'json'}
+import carts from "./data/carts.json" with {type:'json'}
+import recipes from "./data/recipes.json" with {type:'json'}
 
 export const homeController = (req, res) => {
   res.send("Hello CEEJAY, This is a NODE BACKEND API");
